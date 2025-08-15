@@ -394,6 +394,7 @@ public class EM_ConfigHandler
 		{
 			EM_Settings.quakeRarity = 0;
 		}
+		EM_Settings.earthquakeDimensions = config.get(EarSetCat, "Earthquake Dimensions", EM_Settings.earthquakeDimensions, "List of dimension IDs where earthquakes can occur (0 = Overworld, -1 = Nether, 1 = End)").getIntList();
 		
 		// Easter Eggs!
 		String eggCat = "Easter Eggs";

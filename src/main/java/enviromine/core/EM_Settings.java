@@ -162,6 +162,7 @@ public class EM_Settings
 	public static boolean enableQuakes = true;
 	public static boolean quakePhysics = true;
 	public static int quakeRarity = 100;
+	public static int[] earthquakeDimensions = new int[]{0};
 	
 	public static boolean finiteWater = false;
 	public static float thingChance = 0.000001F;

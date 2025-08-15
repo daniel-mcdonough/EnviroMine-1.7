@@ -361,6 +361,11 @@ public class Earthquake
 	
 	public static void TickDay(World world)
 	{
+		if(!isEarthquakeDimensionAllowed(world.provider.dimensionId))
+		{
+			return;
+		}
+		
 		if(world.rand.nextInt(2) == 0 && world.playerEntities.size() > 0)
 		{
 			Entity player = (Entity)world.playerEntities.get(world.rand.nextInt(world.playerEntities.size()));
@@ -468,5 +473,17 @@ public class Earthquake
 			clientQuakes.clear();
 		}
 		lastTickDay = 0;
+	}
+	
+	private static boolean isEarthquakeDimensionAllowed(int dimensionId)
+	{
+		for(int allowedDim : EM_Settings.earthquakeDimensions)
+		{
+			if(allowedDim == dimensionId)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }
